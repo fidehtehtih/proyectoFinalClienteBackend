@@ -53,7 +53,7 @@ exports.registerUser = async(params) => {
     const { fullName, email, password } = params;
     // const hashedPassword = md5(password.toString());
     const hashedPassword = password.toString();
-
+    const type = "local";
     return new Promise((resolve, reject) => {
         db.query(
             `SELECT email FROM users WHERE email = ?`, [email],

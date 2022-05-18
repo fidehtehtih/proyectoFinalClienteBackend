@@ -7,8 +7,8 @@ exports.updateUser = async (params) => {
   if (error) throw { message: error.details[0].message, statusCode: 400 };
 
   const { userId, fullName, email, password } = params;
-  const hashedPassword = md5(password.toString());
-
+  //const hashedPassword = md5(password.toString());
+  const hashedPassword = password.toString();
   return new Promise((resolve, reject) => {
     db.query(
       `SELECT * FROM users WHERE user_id = ? AND password = ?`,

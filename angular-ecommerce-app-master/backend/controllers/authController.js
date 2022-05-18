@@ -16,9 +16,9 @@ exports.login_user = async (req, res, next) => {
 };
 
 exports.register_user = async (req, res, next) => {
-  const { fullName, email, password } = req.body;
+  const { fname, email, password } = req.body;
 
-  registerUser({ fullName, email, password })
+  registerUser({ fname, email, password })
     .then((result) => {
       const { statusCode = 200, message, data, token } = result;
       res.status(statusCode).send({ message, data, token });

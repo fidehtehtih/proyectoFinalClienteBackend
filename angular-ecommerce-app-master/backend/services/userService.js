@@ -21,7 +21,7 @@ exports.updateUser = async(params) => {
                         statusCode: 400,
                     });
                 } else {
-                    if (email === result[0].email && username === result[0].full_name) {
+                    if (email === result[0].email && username === result[0].username) {
                         reject({
                             message: "No new data has been provided",
                             statusCode: 400,
@@ -30,7 +30,7 @@ exports.updateUser = async(params) => {
 
                     let query = "";
 
-                    if (email !== result[0].email && username !== result[0].full_name) {
+                    if (email !== result[0].email && username !== result[0].username) {
                         query = `username = '${username}', email = '${email}'`;
                     } else if (email !== result[0].email) {
                         query = `email = '${email}'`;

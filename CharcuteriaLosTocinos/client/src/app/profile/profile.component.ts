@@ -65,6 +65,8 @@ export class ProfileComponent implements OnInit {
 
   // Submit data to be updated
   onSubmit(): void {
+    console.log(this.userId);
+    console.log(this.user);
     this.alertVisible = false;
     if (this.user[2].value !== this.user[3].value) {
       this.alertType = 'error';
@@ -74,7 +76,7 @@ export class ProfileComponent implements OnInit {
       this.loading = true;
       this._api
         .putTypeRequest(`users/${this.userId}`, {
-          username: this.user[0].value,
+          username: this.user[1].value,
           email: this.user[1].value,
           password: this.user[2].value,
         })

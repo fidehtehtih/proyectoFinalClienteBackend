@@ -74,7 +74,7 @@ export class ProfileComponent implements OnInit {
       this.loading = true;
       this._api
         .putTypeRequest(`users/${this.userId}`, {
-          fullName: this.user[0].value,
+          username: this.user[0].value,
           email: this.user[1].value,
           password: this.user[2].value,
         })

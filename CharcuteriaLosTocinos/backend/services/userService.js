@@ -11,6 +11,7 @@ exports.updateUser = async(params) => {
     const hashedPassword = password.toString();
     return new Promise((resolve, reject) => {
         db.query(
+
             `SELECT * FROM users WHERE user_id = ? AND password = ?`, [userId, hashedPassword],
             (err, result) => {
                 if (err) reject({ message: err, statusCode: 500 });

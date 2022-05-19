@@ -5,7 +5,10 @@ const {
 } = require("../services/orderService");
 
 exports.create_order = async (req, res, next) => {
+  console.log("hola"+req);
   const { userId, cart } = req.body;
+
+
   createOrder({ userId, cart })
     .then((result) => {
       res.status(result.statusCode).send({ ...result });

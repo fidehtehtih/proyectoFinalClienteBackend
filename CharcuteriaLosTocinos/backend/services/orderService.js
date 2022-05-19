@@ -2,7 +2,6 @@ const db = require("../database/db");
 
 exports.createOrder = async (params) => {
   const { userId, cart } = params;
-
   if (!cart) throw { message: "cart was not provided", statusCode: 400 };
   if (!userId) throw { message: "userId was not provided", statusCode: 400 };
 
@@ -95,8 +94,7 @@ exports.getSingleOrder = async (params) => {
 exports.getOrders = async (params) => {
   const { userId } = params;
 
-  if (!userId) throw { message: "userId was not provided", statusCode: 400 };
-
+  if (!userId) throw { message: "userId was not provided ", statusCode: 400 };
   return new Promise((resolve, reject) => {
     db.query(
       `SELECT * FROM orders INNER JOIN orders_details ON ( orders.id = orders_details.order_id ) WHERE user_id = ?`,

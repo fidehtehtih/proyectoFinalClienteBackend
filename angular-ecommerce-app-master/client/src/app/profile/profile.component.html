@@ -9,7 +9,7 @@
             </div>
             <!-- edgar tonto -->
             <div class="cta-container">
-                <button nz-button type="submit" [nzLoading]="loading">
+                <button nz-button type="submit" [nzLoading]="loading" (onClick)="canUpdate()">
           Update
           <!-- [disabled]="canUpdate()" -->
         </button>

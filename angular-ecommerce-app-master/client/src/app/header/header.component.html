@@ -9,7 +9,7 @@
     </button>
     </div>
     <div class="header-container__middle">
-        <h3 routerLink="/">Eccom</h3>
+        <h3 routerLink="/">Los Tocinos</h3>
     </div>
     <div class="header-container__right">
         <ng-container>
@@ -98,13 +98,16 @@
 <div [className]="isMenuOpen ? 'side-menu show' : 'side-menu'">
     <i nz-icon nzType="close" nzTheme="outline" (click)="toggleMenu()"></i>
     <div class="side-menu__content">
-        <h2 routerLink="/" (click)="toggleMenu()">Eccom</h2>
+        <h2 routerLink="/" (click)="toggleMenu()">Los Tocinos</h2>
         <nav>
             <ul>
                 <li routerLink="/" (click)="toggleMenu()">Home</li>
+                <li routerLink="/" (click)="toggleMenu()">Productos</li>
                 <li routerLink="/cart" (click)="toggleMenu()">Cart</li>
                 <li routerLink="/profile" (click)="toggleMenu()">Profile</li>
+                <li routerLink="/" (click)="toggleMenu()">Galeria</li>
                 <li routerLink="/order-history" (click)="toggleMenu()">Order History</li>
+                <li routerLink="/" (click)="toggleMenu()">Panel de admin</li>
             </ul>
         </nav>
         <div class="🍑">

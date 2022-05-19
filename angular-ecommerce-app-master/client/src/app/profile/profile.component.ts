@@ -11,8 +11,8 @@ import { TokenStorageService } from '../services/token-storage.service';
 export class ProfileComponent implements OnInit {
   user = [
     {
-      key: 'fullName',
-      label: 'Full name',
+      key: 'username',
+      label: 'Username',
       value: '',
       type: 'text',
     },
@@ -57,9 +57,10 @@ export class ProfileComponent implements OnInit {
   }
 
   canUpdate(): boolean {
-    return this.user.filter((field) => field.value.length > 0).length !== 4
-      ? true
-      : false;
+   
+    return this.user.filter((field) => field.value.length > 0).length !== 4 ? true: false;
+
+      
   }
 
   // Submit data to be updated

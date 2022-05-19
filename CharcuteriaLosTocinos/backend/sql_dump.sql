@@ -441,7 +441,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `age`, `role`, `photoUrl`, `type`) VALUES
 (1, 'john', '$2b$10$iLEz3tkVKeOCwuagcqhDUOV.Iswjc.I41unbnnFGiqK/gmstDCC3i', 'john@gmail.com',31, 777, '', 'local'),
-(3, 'alexplagar', 'Monlau2020', 'alexplagar@gmail.com', 21, 555, '', 'local');
+(2, 'alexplagar', 'Monlau2020', 'alexplagar@gmail.com', 21, 555, '', 'local');
 
 --
 -- Indexes for dumped tables

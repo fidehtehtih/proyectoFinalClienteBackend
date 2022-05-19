@@ -93,7 +93,6 @@ export class ProfileComponent implements OnInit {
             });
             this.user[2].value = '';
             this.user[3].value = '';
-            // window.location.reload();
           },
           (err: any) => {
             console.log(err);

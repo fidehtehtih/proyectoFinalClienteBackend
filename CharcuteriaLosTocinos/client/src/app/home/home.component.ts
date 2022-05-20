@@ -11,7 +11,7 @@ import { Products, Product } from '../shared/models/product.model';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  styleUrls: ['./home.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {

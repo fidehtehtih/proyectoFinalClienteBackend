@@ -23,9 +23,11 @@ export class CheckoutComponent implements OnInit {
   constructor(private _auth: AuthService, private _cart: CartService) {
     this._auth.user.subscribe((user) => {
       if (user) {
+        
         this.currentUser = user;
-        this.billingAddress[0].value = user.full_name;
-        this.billingAddress[1].value = user.email;
+        this.currentUser.user_id = user.user_id;
+        this.billingAddress[0].value = user.user_id;
+        this.billingAddress[2].value = user.email;
       }
     });
 
@@ -40,7 +42,7 @@ export class CheckoutComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       this._cart
-        .submitCheckout(this.currentUser.user_id, this.cartData)
+        .submitCheckout(this.billingAddress[0].value, this.cartData)
         .subscribe(
           (res: any) => {
             console.log(res);
@@ -52,6 +54,8 @@ export class CheckoutComponent implements OnInit {
           },
           (err) => {
             console.log(err);
+            console.log(this.billingAddress[0].value);
+            console.log(    this.billingAddress[1].value);
             this.loading = false;
           }
         );
@@ -97,8 +101,14 @@ export class CheckoutComponent implements OnInit {
 
   billingAddress = [
     {
-      name: 'Full name',
-      placeholder: 'Enter your full name',
+      name: 'ID',
+      placeholder: 'ID',
+      type: 'number',
+      value: '',
+    },
+    {
+      name: 'Username',
+      placeholder: 'Username',
       type: 'text',
       value: '',
     },

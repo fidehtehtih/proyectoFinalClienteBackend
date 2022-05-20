@@ -482,8 +482,7 @@ INSERT INTO `products` (`id`, `title`, `image`, `images`, `description`, `price`
 (94, 'Queso Pok', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/quesoPok.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
 (95, 'Queso Roquefort', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/quesoRoquefort.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
 (96, 'Queso Burrata', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/quesoBurrata.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
-(97, 'Queso Feta', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/quesoFeta.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
-;
+(97, 'Queso Feta', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/quesoFeta.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2);
 -- --------------------------------------------------------
 
 --

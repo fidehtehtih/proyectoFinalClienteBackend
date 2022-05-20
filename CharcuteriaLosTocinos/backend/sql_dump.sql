@@ -386,6 +386,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `image`, `images`, `description`, `price`, `quantity`, `short_desc`, `cat_id`) VALUES
+(1, 'Croquetas de Pollo', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosCroquetaP.jpg', NULL, 'Las croquetas de la abuela', 89, 100, 'Embutido', 2),
+(2, 'Croquetas de Jamon', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosCroquetaJ.jpg', NULL, 'Croquetas muy buenas con un jamon exquisito', 89, 100, 'Otros', 2),
 (3, 'Pavo Pechuga', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/pavoPechuga.jpg', NULL, 'Pechuga de pavo de muy buena calidad', 16.9, 100, 'Embutido', 2),
 (4, 'Pavo Muslo', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/pavoMuslo.jpg', NULL, 'Muslo de pavo de muy buena calidad', 16.9, 100, 'Embutido', 2),
 (5, 'Jamon Serrano', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/jamonSerrano.jpg', NULL, 'Jamon del pais serrano curado en salamanca', 29.99, 100, 'Embutido', 2),
@@ -435,7 +437,35 @@ INSERT INTO `products` (`id`, `title`, `image`, `images`, `description`, `price`
 (49, 'Mortadela Pequeña', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/mortadelaPeq.png', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
 (50, 'Sobrasada', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/sobrasada.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
 (51, 'Salami', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/salami.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
-(52, 'Salmon', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2);
+(52, 'Salmon', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(53, 'Nata para cocinar', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/sobrasada.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
+(54, 'Mantequilla', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/salami.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
+(55, 'Datiles', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(56, 'Patatas de Olot', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/sobrasada.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
+(57, 'Pollo rustido', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/salami.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
+(58, 'Albondigas', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(59, 'Empanada de Atún', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/sobrasada.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
+(60, 'Ensaladilla rusa', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/salami.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
+(61, 'Pastel de marisco', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(62, 'Pastel de Salmon', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/salami.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
+(63, 'Lasaña', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(64, 'Crepes salados', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/salami.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
+(65, 'Rollitos salados', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(66, 'Libritos', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/salami.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
+(67, 'Canelones', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(68, 'Pastel de Atún', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/salami.jpg', NULL, 'jamon del gueno', 89, 100, 'Embutido', 2),
+(69, 'Queso Cheddar naranja', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(70, 'Queso Cheddar blanco', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(71, 'Queso Cambembert', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(72, 'Queso Garcia Vaquero semi curado', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(73, 'Queso Garcia Vaquero', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(74, 'Queso Garcia Vaquero', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(75, 'Queso Cambembert', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(76, 'Queso Cambembert', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(77, 'Queso Cambembert', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(78, 'Queso Cambembert', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+(79, 'Queso Cambembert', 'https://raw.githubusercontent.com/fidehtehtih/proyectoFinalClienteBackend/master/imagesComida/otrosSalmon.jpg', NULL, 'jamon del gueno', 89, 100, 'Otros', 2),
+;
 -- --------------------------------------------------------
 
 --

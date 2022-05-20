@@ -9,11 +9,17 @@ import { ProductComponent } from './product/product.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { AuthGuardService } from './guards/auth-guard.service';
+import { PanelAdminComponent } from './panel-admin/panel-admin.component'; 
+import { GalleryComponent } from './gallery/gallery.component';
+import { HomePrincipalComponent } from './home-principal/home-principal.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'panel-admin', component:PanelAdminComponent  },
+  { path: 'gallery', component:GalleryComponent  },
+  { path: 'homePrincipal', component:HomePrincipalComponent  },
   {
     path: 'profile',
     component: ProfileComponent,

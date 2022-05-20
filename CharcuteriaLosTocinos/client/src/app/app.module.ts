@@ -37,6 +37,7 @@ import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PanelAdminComponent } from './panel-admin/panel-admin.component';
+import { HomePrincipalComponent } from './home-principal/home-principal.component';
 
 registerLocaleData(en);
 
@@ -56,6 +57,7 @@ registerLocaleData(en);
     ProductCardComponent,
     GalleryComponent,
     PanelAdminComponent,
+    HomePrincipalComponent,
   ],
   imports: [
     BrowserModule,

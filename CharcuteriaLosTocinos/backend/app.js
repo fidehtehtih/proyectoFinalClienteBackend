@@ -6,7 +6,7 @@ const cors = require("cors");
 
 // Config .env file
 dotenv.config({
-  path: path.join(__dirname, `env/${process.env.NODE_ENV}.env`),
+    path: path.join(__dirname, `env/${process.env.NODE_ENV}.env`),
 });
 
 // Initialize express app
@@ -24,12 +24,12 @@ app.use("/", indexRouter);
 
 // Health check
 app.get("/", (req, res) => {
-  res.status(200).send("Health Check");
+    res.status(200).send("Health Check");
 });
 
 const PORT = process.env.PORT || 5000;
 const ENV = process.env.NODE_ENV || null;
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT} using ${ENV} env.`);
+    console.log(`Server is running on port ${PORT} using ${ENV} env.`);
 });

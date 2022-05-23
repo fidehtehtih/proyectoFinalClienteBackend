@@ -6,13 +6,12 @@ exports.updateUser = async(params) => {
     const { error } = updateUserValidation(params);
     if (error) throw { message: error.details[0].message, statusCode: 400 };
 
-    const { userId, username, email, password } = params;
-    //const hashedPassword = md5(password.toString());
-    // const hashedPassword = password.toString();
+    const { userId, fullName, email, password } = params;
+    const hashedPassword = md5(password.toString());
+
     return new Promise((resolve, reject) => {
         db.query(
-
-            `SELECT * FROM users WHERE user_id = ? AND password = ?`, [userId, password],
+            `SELECT * FROM users WHERE user_id = ? AND password = ?`, [userId, hashedPassword],
             (err, result) => {
                 if (err) reject({ message: err, statusCode: 500 });
 
@@ -22,7 +21,7 @@ exports.updateUser = async(params) => {
                         statusCode: 400,
                     });
                 } else {
-                    if (email === result[2].email && username === result[1].username) {
+                    if (email === result[0].email && fullName === result[0].full_name) {
                         reject({
                             message: "No new data has been provided",
                             statusCode: 400,
@@ -31,12 +30,12 @@ exports.updateUser = async(params) => {
 
                     let query = "";
 
-                    if (email !== result[2].email && username !== result[1].username) {
-                        query = `username = '${username}', email = '${email}'`;
-                    } else if (email !== result[2].email) {
+                    if (email !== result[0].email && fullName !== result[0].full_name) {
+                        query = `full_name = '${fullName}', email = '${email}'`;
+                    } else if (email !== result[0].email) {
                         query = `email = '${email}'`;
                     } else {
-                        query = `username = '${username}'`;
+                        query = `full_name = '${fullName}'`;
                     }
 
                     db.query(

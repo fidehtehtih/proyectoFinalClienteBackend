@@ -620,7 +620,8 @@ ALTER TABLE `addresses`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
+  ADD CONSTRAINT `users` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+-- cambio
 --
 -- Constraints for table `orders_details`
 --

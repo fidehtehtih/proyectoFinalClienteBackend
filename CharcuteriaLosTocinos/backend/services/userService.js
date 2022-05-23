@@ -8,11 +8,11 @@ exports.updateUser = async(params) => {
 
     const { userId, username, email, password } = params;
     //const hashedPassword = md5(password.toString());
-    const hashedPassword = password.toString();
+    // const hashedPassword = password.toString();
     return new Promise((resolve, reject) => {
         db.query(
 
-            `SELECT * FROM users WHERE user_id = ? AND password = ?`, [userId, hashedPassword],
+            `SELECT * FROM users WHERE user_id = ? AND password = ?`, [userId, password],
             (err, result) => {
                 if (err) reject({ message: err, statusCode: 500 });
 
@@ -22,7 +22,7 @@ exports.updateUser = async(params) => {
                         statusCode: 400,
                     });
                 } else {
-                    if (email === result[0].email && username === result[0].username) {
+                    if (email === result[1].email && username === result[0].username) {
                         reject({
                             message: "No new data has been provided",
                             statusCode: 400,
@@ -31,9 +31,9 @@ exports.updateUser = async(params) => {
 
                     let query = "";
 
-                    if (email !== result[0].email && username !== result[0].username) {
+                    if (email !== result[1].email && username !== result[0].username) {
                         query = `username = '${username}', email = '${email}'`;
-                    } else if (email !== result[0].email) {
+                    } else if (email !== result[1].email) {
                         query = `email = '${email}'`;
                     } else {
                         query = `username = '${username}'`;

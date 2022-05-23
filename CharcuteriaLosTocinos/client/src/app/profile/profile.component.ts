@@ -75,7 +75,8 @@ export class ProfileComponent implements OnInit {
     } else {
       this.loading = true;
       this._api
-        .putTypeRequest(`users/${this.userId}`, {
+        .putTypeRequest(`users/2`, {
+          // .putTypeRequest(`users/${this.userId}`, {
           username: this.user[0].value,
           email: this.user[1].value,
           password: this.user[2].value,

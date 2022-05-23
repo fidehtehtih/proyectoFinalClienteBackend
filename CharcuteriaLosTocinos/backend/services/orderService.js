@@ -97,7 +97,7 @@ exports.getOrders = async (params) => {
   if (!userId) throw { message: "userId was not provided ", statusCode: 400 };
   return new Promise((resolve, reject) => {
     db.query(
-      `SELECT * FROM orders INNER JOIN orders_details ON ( orders.id = orders_details.order_id ) WHERE user_id = ?`,
+      `SELECT * FROM orders INNER JOIN orders_details ON ( orders.id = orders_details.order_id ) WHERE username = ?`,
       [userId],
       (err, result) => {
         if (err) reject({ message: err, statusCode: 500 });

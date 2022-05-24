@@ -3,8 +3,8 @@ const {
 } = require("../services/ProductService");
 
 exports.createProduct = async(req, res, next) => {
-    const { prodId, name, desc, price, imgProd } = req.body;
-    createOrder({ userId, cart })
+    const { prodId, name, imgProd, desc, price, cantidad, category, categoryId } = req.body;
+    createOrder({ prodId, name, imgProd, desc, price, cantidad, category, categoryId })
         .then((result) => {
             res.status(result.statusCode).send({...result });
         })

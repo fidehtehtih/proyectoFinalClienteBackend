@@ -11,10 +11,14 @@ import { ApiService } from '../services/api.service';
 })
 export class PanelAdminComponent implements OnInit {
 
-  fullName = '';
-  email = '';
-  password = '';
-  confirmPassword = '';
+  id = '';
+  name = '';
+  image = '';
+  description = '';
+  price = '';
+  quantity = '';
+  category = '';
+  categoryId = '';
   errorMessage = '';
   constructor(
     private _api: ApiService,

@@ -1,62 +1,42 @@
 const db = require("../database/db");
 
 exports.createProduct = async(params) => {
+
     const { prodId, name, imgProd, desc, price, cantidad, category, categoryId } = params;
 
-    // if (!prodId) throw { message: "id was not provided", statusCode: 400 };
-    // if (!name) throw { message: "name was not provided", statusCode: 400 };
-
     return new Promise((resolve, reject) => {
+
         db.query(
+
             `INSERT INTO products (id, title, image, description, price, quantity, short_desc, cat_id) VALUES (?,?,?,?,?,?,?,?)`, [prodId, name, imgProd, desc, price, cantidad, category, categoryId],
+          
             (err, result) => {
-                if (err) reject({ message: err, statusCode: 500 });
-
-                if (result) {
-                    let newOrderId = result.insertId;
-                    cart.products.forEach(async(prod) => {
-                        db.query(
-                            `SELECT p.quantity FROM products p WHERE p.id = ?`, [prod.id],
-                            (err, result) => {
-                                if (err) reject({ message: err, statusCode: 500 });
-
-                                let productQuantity = result[0].quantity; // db product
-
-                                // deduct the quantity from products that were ordered in db
-                                let updatedQuantity = productQuantity - prod.quantity;
-                                if (updatedQuantity > 0) {
-                                    productQuantity = updatedQuantity;
-                                } else productQuantity = 0;
-
-                                db.query(
-                                    `INSERT INTO orders_details (order_id, product_id, quantity) VALUES (?,?,?)`, [newOrderId, prod.id, prod.quantity],
-                                    (err, result) => {
-                                        if (err) reject({ message: err, statusCode: 500 });
-
-                                        db.query(
-                                            `UPDATE products SET quantity = ${productQuantity} WHERE id = ${prod.id}`,
-                                            (err, result) => {
-                                                if (err) reject({ message: err, statusCode: 500 });
-                                                console.log(result);
-                                            }
-                                        );
-                                    }
-                                );
-                            }
-                        );
-                    });
-
-                    resolve({
-                        message: `Order was successfully placed with order id ${newOrderId}`,
-                        orderId: newOrderId,
-                        products: cart.products,
-                        statusCode: 201,
-                    });
-                } else {
+                if (result.length > 0) {
                     reject({
-                        message: "New order failed while adding order details",
-                        statusCode: 500,
+                        message: "Email address is in use, please try a different one",
+                        statusCode: 400,
                     });
+                } else if (result.length === 0) {
+                    db.query(
+                        `INSERT INTO users (username, email, password) VALUES (?,?,?)`, [fullName, email, hashedPassword],
+                        (err, result) => {
+                            if (err) {
+                                reject({
+                                    message: "Something went wrong, please try again",
+                                    statusCode: 400,
+                                    data: err,
+                                });
+                            } else {
+                                const token = jwt.sign({ data: result }, "secret");
+                                resolve({
+                                    data: result,
+                                    message: "You have successfully registered.",
+                                    token: token,
+                                    statusCode: 200,
+                                });
+                            }
+                        }
+                    );
                 }
             }
         );

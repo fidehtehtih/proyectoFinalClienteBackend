@@ -1,1 +1,30 @@
-<h1>Panel Administrator</h1>
+<div class="profile-container">
+    <div class="form-container">
+     <h2>Añadir Productos</h2>
+            <form [formGroup]="MyNewForm" (ngSubmit)="Clic(MyNewForm.value)" >
+                <div class="input-container">
+                    <label>Id del producto: </label><br>
+                    <input type="number" class="form-control" name="id" formControlName="id" >
+                </div>
+                <div class="input-container">
+                    <label>Nombre del producto: </label><br>
+                    <input type="text" class="form-control" name="nombre" formControlName="nombre" >
+                </div>
+                <div class="input-container">
+                    <label>Descripción del producto: </label><br>
+                    <input type="text" class="form-control" name="description" formControlName="description" >
+                </div>
+                <div class="input-container">
+                    <label>Precio del producto: </label><br>
+                    <input type="number" class="form-control" name="precio" formControlName="precio" >
+                </div>
+                <div class="input-container">
+                    <label>Imagen del producto: </label><br>
+                    <input type="text" class="form-control" name="imagen" formControlName="imagen" >
+                </div><br>
+                <div class="cta-container">
+            <button type="submit">Enviar</button>
+                </div>
+            </form>
+       </div> 
+    </div>

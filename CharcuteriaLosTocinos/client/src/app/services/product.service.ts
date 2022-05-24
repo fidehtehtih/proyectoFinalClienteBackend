@@ -26,4 +26,12 @@ export class ProductService {
     console.log(id);
     return this._api.getTypeRequest('products/' + id);
   }
+
+  addProducts(product: Product):Observable<Product>{
+    return this.http.post<Product>(this.url + product, {
+      params: {
+        
+      },
+    });
+  }
 }

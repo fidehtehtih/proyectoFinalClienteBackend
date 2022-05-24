@@ -11,9 +11,13 @@ export class PanelAdminComponent implements OnInit {
   MyNewForm = new FormGroup({
     id: new FormControl(''),
     nombre: new FormControl(''),
-    precio: new FormControl(''),
+    imagen: new FormControl(''),
     description: new FormControl(''),
-    imagen: new FormControl('')
+    precio: new FormControl(''),
+    cantidad: new FormControl(''),
+    categoria: new FormControl(''),
+    categoriaId: new FormControl(''),
+    
   });
 
   constructor() { }

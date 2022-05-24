@@ -10,6 +10,7 @@ import { TokenStorageService } from './token-storage.service';
 export class AuthService {
   private userSubject: BehaviorSubject<any>;
   public user: Observable<any>;
+  public pruduct: Observable<any>;
 
   constructor(private _api: ApiService, private _token: TokenStorageService) {
     this.userSubject = new BehaviorSubject<any>(this._token.getUser());
@@ -55,4 +56,20 @@ export class AuthService {
     this._token.clearStorage();
     this.userSubject.next(null);
   }
+
+
+  createProduct(pruduct: any): Observable<any> {
+    return this._api.postTypeRequest('auth/product', {
+      id: pruduct.id,
+      name: pruduct.name,
+      image: pruduct.image,
+      description: pruduct.description,
+      price: pruduct.price,
+      quantity: pruduct.quantity,
+      category: pruduct.category,
+      categoryId: pruduct.categoryId,
+    });
+  }
+
+
 }

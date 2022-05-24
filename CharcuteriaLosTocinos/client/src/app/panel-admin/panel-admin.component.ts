@@ -44,7 +44,16 @@ export class PanelAdminComponent implements OnInit {
       quantity: this.quantity,
       category: this.category,
       categoryId: this.categoryId,
-    })
+    }).subscribe(
+      (res) => {
+        console.log(res);
+
+      },
+      (err) => {
+        this.errorMessage = err.error.message;
+
+      }
+    );
 }
 
 

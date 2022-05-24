@@ -1,6 +1,6 @@
 const {
     createProduct
-} = require("../services/ProductService");
+} = require("../services/productService");
 
 exports.createProduct = async(req, res, next) => {
     const { prodId, name, imgProd, desc, price, cantidad, category, categoryId } = req.body;

@@ -22,14 +22,11 @@ export class PanelAdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
-<<<<<<< HEAD
+
   onSubmit() { 
     this.errorMessage = '';
 
 }
-=======
-  Click() { 
- 
-  }
->>>>>>> 8871e03cb6edb2768de404153b10fd5cb3aa851f
+
+
 }

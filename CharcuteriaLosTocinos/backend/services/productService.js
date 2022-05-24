@@ -3,7 +3,7 @@ const db = require("../database/db");
 exports.createProduct = async(params) => {
 
     const { prodId, name, imgProd, desc, price, cantidad, category, categoryId } = params;
-
+console.log(params);
     return new Promise((resolve, reject) => {
 
         db.query(

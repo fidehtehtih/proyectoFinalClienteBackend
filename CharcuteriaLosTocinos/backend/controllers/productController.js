@@ -1,6 +1,4 @@
-const {
-    createProduct
-} = require("../services/productService");
+const {createProduct} = require("../services/productService");
 
 exports.createProduct = async(req, res, next) => {
     const { prodId, name, imgProd, desc, price, cantidad, category, categoryId } = req.body;

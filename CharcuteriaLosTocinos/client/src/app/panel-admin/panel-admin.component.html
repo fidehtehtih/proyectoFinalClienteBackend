@@ -1,38 +1,38 @@
 <div class="profile-container">
     <div class="form-container">
         <h2>Añadir Productos</h2>
-        <form [formGroup]="MyNewForm" (ngSubmit)="Click(MyNewForm.value)">
+        <form #adminForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="input-container">
                 <label>Id del producto: </label><br>
-                <input type="number" class="form-control" name="id" formControlName="id">
+                <input type="number" class="form-control" name="id" [(ngModel)]="id" placeholder="Enter your id" >
             </div>
             <div class="input-container">
                 <label>Nombre del producto: </label><br>
-                <input type="text" class="form-control" name="nombre" formControlName="nombre">
+                <input type="text" class="form-control" name="name" [(ngModel)]="name" placeholder="Enter your name">
             </div>
             <div class="input-container">
                 <label>Imagen del producto: </label><br>
-                <input type="text" class="form-control" name="imagen" formControlName="imagen">
+                <input type="text" class="form-control" name="image" [(ngModel)]="image" placeholder="Enter your url image">
             </div>
             <div class="input-container">
                 <label>Descripción del producto: </label><br>
-                <input type="text" class="form-control" name="description" formControlName="description">
+                <input type="text" class="form-control" name="description" [(ngModel)]="description" placeholder="Enter your description">
             </div>
             <div class="input-container">
                 <label>Precio del producto: </label><br>
-                <input type="number" class="form-control" name="precio" formControlName="precio">
+                <input type="number" class="form-control" name="precio" [(ngModel)]="price" placeholder="Enter the price">
             </div>
             <div class="input-container">
                 <label>Cantidad: </label><br>
-                <input type="number" class="form-control" name="cantidad" formControlName="cantidad">
+                <input type="number" class="form-control" name="quantity" [(ngModel)]="id" placeholder="Enter the quantity">
             </div>
             <div class="input-container">
                 <label>Categoria: </label><br>
-                <input type="text" class="form-control" name="categoria" formControlName="categoria">
+                <input type="text" class="form-control" name="category"  [(ngModel)]="category" placeholder="Enter the category">
             </div>
             <div class="input-container">
                 <label>Categoria ID: </label><br>
-                <input type="number" class="form-control" name="categoriaId" formControlName="categoriaId">
+                <input type="number" class="form-control" name="categoryId"  [(ngModel)]="categoryId" placeholder="Enter the categoryId">
             </div><br>
             <div class="cta-container">
                 <button type="submit">Enviar</button>

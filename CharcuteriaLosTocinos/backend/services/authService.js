@@ -11,8 +11,7 @@ exports.loginUser = async(params) => {
     if (error) throw { message: error.details[0].message, statusCode: 400 };
 
     const { email, password } = params;
-    // const hashedPassword = md5(password.toString());
-    const hashedPassword = password.toString();
+    const hashedPassword = md5(password.toString());
 
     return new Promise((resolve, reject) => {
         db.query(
@@ -51,9 +50,8 @@ exports.registerUser = async(params) => {
     if (error) throw { message: error.details[0].message, statusCode: 400 };
 
     const { fullName, email, password } = params;
-    // const hashedPassword = md5(password.toString());
-    const hashedPassword = password.toString();
-    const type = "local";
+    const hashedPassword = md5(password.toString());
+
     return new Promise((resolve, reject) => {
         db.query(
             `SELECT email FROM users WHERE email = ?`, [email],

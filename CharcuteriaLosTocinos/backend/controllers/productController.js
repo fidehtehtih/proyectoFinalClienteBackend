@@ -4,7 +4,7 @@ const {
 
 exports.createProduct = async(req, res, next) => {
     const { prodId, name, imgProd, desc, price, cantidad, category, categoryId } = req.body;
-    createOrder({ prodId, name, imgProd, desc, price, cantidad, category, categoryId })
+    createProduct({ prodId, name, imgProd, desc, price, cantidad, category, categoryId })
         .then((result) => {
             res.status(result.statusCode).send({...result });
         })

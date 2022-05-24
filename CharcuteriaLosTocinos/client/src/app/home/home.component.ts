@@ -18,15 +18,18 @@ export class HomeComponent implements OnInit {
   products: Product[] = [];
   categories: any[] = [
     {
-      name: 'Laptops',
+      name: 'Embutido',
     },
     {
-      name: 'Accessories',
+      name: 'Carne',
     },
     {
-      name: 'Cameras',
+      name: 'Quesos',
     },
-  ];
+    {
+      name: 'Otros',
+    },
+  ];;
   loading = false;
   productPageCounter = 1;
   additionalLoading = false;
@@ -34,7 +37,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private cartService: CartService
-  ) {}
+  ) { }
 
   public screenWidth: any;
   public screenHeight: any;

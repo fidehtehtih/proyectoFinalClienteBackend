@@ -21,11 +21,10 @@ export class PanelAdminComponent implements OnInit {
   quantity = '';
   category = '';
   categoryId = '';
-<<<<<<< HEAD
 
-=======
+
   errorMessage = '';
->>>>>>> 8b1f9a2fee7092115d2c5b2d151e1a3529454c70
+
   constructor(
     private _api: ApiService,
     private _auth: AuthService,

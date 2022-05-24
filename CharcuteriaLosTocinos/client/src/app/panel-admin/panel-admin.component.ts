@@ -27,17 +27,7 @@ export class PanelAdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  Click(datos) { 
-    console.log(datos); 
-
-
-    this.product.id = datos.id;
-    this.product.name = datos.nombre;
-    this.product.image = datos.imagen;
-    this.product.description = datos.description;
-    this.product.price = datos.precio;
-    this.product.quantity = datos.cantidad;
-    this.product.images = datos.categoria;
-    this.product.category = datos.categoriaId;
+  Click() { 
+ 
   }
 }

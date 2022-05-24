@@ -1,10 +1,10 @@
 const db = require("../database/db");
 
 exports.createProduct = async(params) => {
-    const { userId, cart } = params;
+    const { prodId, name, imgProd, desc, price, cantidad, category, categoryId } = params;
 
-    if (!cart) throw { message: "cart was not provided", statusCode: 400 };
-    if (!userId) throw { message: "userId was not provided", statusCode: 400 };
+    // if (!prodId) throw { message: "id was not provided", statusCode: 400 };
+    // if (!name) throw { message: "name was not provided", statusCode: 400 };
 
     return new Promise((resolve, reject) => {
         db.query(

@@ -8,7 +8,7 @@ exports.createProduct = async(params) => {
 
     return new Promise((resolve, reject) => {
         db.query(
-            `INSERT INTO orders (user_id) VALUES (?)`, [userId],
+            `INSERT INTO products (id, title, image, description, price, quantity, short_desc, cat_id) VALUES (?,?,?,?,?,?,?,?)`, [prodId, name, imgProd, desc, price, cantidad, category, categoryId],
             (err, result) => {
                 if (err) reject({ message: err, statusCode: 500 });
 

@@ -27,11 +27,17 @@ export class ProductService {
     return this._api.getTypeRequest('products/' + id);
   }
 
-  addProducts(product: Product):Observable<Product>{
-    return this.http.post<Product>(this.url + product, {
-      params: {
-        
-      },
+  createProduct(pruduct: any): Observable<any> {
+    return this._api.postTypeRequest('productadmin/create', {
+      id: pruduct.id,
+      name: pruduct.name,
+      image: pruduct.image,
+      description: pruduct.description,
+      price: pruduct.price,
+      quantity: pruduct.quantity,
+      category: pruduct.category,
+      categoryId: pruduct.categoryId,
     });
   }
+  
 }

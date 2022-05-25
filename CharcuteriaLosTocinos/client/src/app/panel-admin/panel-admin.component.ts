@@ -28,6 +28,7 @@ export class PanelAdminComponent implements OnInit {
   constructor(
     private _api: ApiService,
     private _auth: AuthService,
+    private _prod: ProductService,
   ) {}
 
   ngOnInit(): void {
@@ -35,7 +36,7 @@ export class PanelAdminComponent implements OnInit {
 
   onSubmit() { 
 
-    this._auth.createProduct({
+    this._prod.createProduct({
       // prodId: this.prodId,
       name: this.name,
       imgProd: this.imgProd,

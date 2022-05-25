@@ -2,7 +2,6 @@ const db = require("../database/db");
 // const imagesNull = NULL;
 exports.createProduct = async(params) => {
 
-    const { name, imgProd, desc, price, cantidad, category, categoryId } = params;
     console.log(params);
     return new Promise((resolve, reject) => {
 
@@ -19,7 +18,7 @@ exports.createProduct = async(params) => {
                     });
                 } else if (result.length === 0) {
                     db.query(
-                        `INSERT INTO products (title, image, description, price, quantity, short_desc, cat_id) VALUES (?,?,?,?,?,?,?)`, [name, imgProd, desc, price, cantidad, category, categoryId],
+                        `INSERT INTO products (image, price, title, cat_id) VALUES (?,?,?,?)`, [name, price, category, categoryId],
                         (err, result) => {
                             if (err) {
                                 reject({

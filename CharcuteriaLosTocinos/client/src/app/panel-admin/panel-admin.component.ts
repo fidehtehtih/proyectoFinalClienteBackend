@@ -13,14 +13,14 @@ import { AuthService } from '../services/auth.service';
 })
 export class PanelAdminComponent implements OnInit {
 
-  id = '';
-  name = '';
-  image = '';
-  description = '';
-  price = '';
-  quantity = '';
-  category = '';
-  categoryId = '';
+  prodId;
+  name;
+  imgProd:Text;
+  desc:Text;
+  price:number;
+  cantidad:number;
+  category;
+  categoryId;
 
 
   errorMessage = '';
@@ -36,12 +36,12 @@ export class PanelAdminComponent implements OnInit {
   onSubmit() { 
 
     this._auth.createProduct({
-      id: this.id,
+      // prodId: this.prodId,
       name: this.name,
-      image: this.image,
-      description: this.description,
+      imgProd: this.imgProd,
+      desc: this.desc,
       price: this.price,
-      quantity: this.quantity,
+      cantidad: this.cantidad,
       category: this.category,
       categoryId: this.categoryId,
     }).subscribe(

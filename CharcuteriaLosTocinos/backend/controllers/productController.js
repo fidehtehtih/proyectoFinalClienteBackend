@@ -1,8 +1,8 @@
-const {createProduct} = require("../services/productService");
+const { createProduct } = require("../services/productService");
 
 exports.createProduct = async(req, res, next) => {
-    const { prodId, name, imgProd, desc, price, cantidad, category, categoryId } = req.body;
-    createProduct({ prodId, name, imgProd, desc, price, cantidad, category, categoryId })
+    const { name, imgProd, desc, price, cantidad, category, categoryId } = req.body;
+    createProduct({ name, imgProd, desc, price, cantidad, category, categoryId })
         .then((result) => {
             res.status(result.statusCode).send({...result });
         })

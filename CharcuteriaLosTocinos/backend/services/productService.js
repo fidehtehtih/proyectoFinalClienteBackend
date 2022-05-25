@@ -1,28 +1,28 @@
 const db = require("../database/db");
-
+// const imagesNull = NULL;
 exports.createProduct = async(params) => {
 
-    const { prodId, name, imgProd, desc, price, cantidad, category, categoryId } = params;
-console.log(params);
+    const { name, imgProd, desc, price, cantidad, category, categoryId } = params;
+    console.log(params);
     return new Promise((resolve, reject) => {
 
         db.query(
 
-            `SELECT id FROM products WHERE id = ?`, [prodId],
+            `SELECT title FROM products WHERE title = ?`, [name],
 
             (err, result) => {
                 if (result.length > 0) {
                     reject({
-                        message: "Id is in use, please try a different one",
+                        message: "name is in use, please try a different one",
                         statusCode: 400,
                     });
                 } else if (result.length === 0) {
                     db.query(
-                        `INSERT INTO products (id, title, image, description, price, quantity, short_desc, cat_id) VALUES (?,?,?,?,?,?,?,?)`, [prodId, name, imgProd, desc, price, cantidad, category, categoryId],
+                        `INSERT INTO products (title, image, description, price, quantity, short_desc, cat_id) VALUES (?,?,?,?,?,?,?)`, [name, imgProd, desc, price, cantidad, category, categoryId],
                         (err, result) => {
                             if (err) {
                                 reject({
-                                    message: "Something went wrong, please try again",
+                                    message: "Something went wrong, please try again" + err,
                                     statusCode: 400,
                                     data: err,
                                 });

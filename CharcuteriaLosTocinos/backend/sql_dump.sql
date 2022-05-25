@@ -377,10 +377,10 @@ CREATE TABLE `products` (
   `id` int(10) NOT NULL,
   `title` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `images` text CHARACTER SET utf8 COLLATE utf8_general_ci,
-  `description` text NOT NULL,
+  `images` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `description` varchar(255) NOT NULL,
   `price` float NOT NULL,
-  `quantity` int(10) NOT NULL,
+  `quantity` int(10) DEFAULT '100',
   `short_desc` varchar(255) NOT NULL,
   `cat_id` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

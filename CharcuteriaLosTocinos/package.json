@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "angular-responsive-carousel": "^2.1.2",
+    "ng-simple-carousel": "^1.2.0",
+    "tslib": "^2.4.0"
+  }
 }

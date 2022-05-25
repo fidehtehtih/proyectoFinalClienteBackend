@@ -14,13 +14,13 @@ import { AuthService } from '../services/auth.service';
 export class PanelAdminComponent implements OnInit {
 
   prodId;
-  name;
+  name:Text;
   imgProd:Text;
   desc:Text;
   price:number;
   cantidad:number;
-  category;
-  categoryId;
+  category:Text;
+  categoryId:number;
 
 
   errorMessage = '';

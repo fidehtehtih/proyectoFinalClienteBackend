@@ -51,7 +51,6 @@
     display: block;
     height: 250px;
     width: 250px;
-    background-color: rgb(199, 199, 42);
     float: left;
     margin-right: 20px;
 }
@@ -73,7 +72,6 @@
     display: block;
     min-height: 200px;
     min-width: 200px;
-    background-color: rgb(199, 199, 42);
     float: right;
     margin-right: 20px;
 }

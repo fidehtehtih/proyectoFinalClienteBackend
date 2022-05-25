@@ -14,12 +14,12 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { HomePrincipalComponent } from './home-principal/home-principal.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'products', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'panel-admin', component:PanelAdminComponent  },
   { path: 'gallery', component:GalleryComponent  },
-  { path: 'homePrincipal', component:HomePrincipalComponent  },
+  { path: '', component:HomePrincipalComponent  },
   {
     path: 'profile',
     component: ProfileComponent,

@@ -21,12 +21,12 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
   <div class="carousel-inner" role="listbox">
-      <img src="{{ showSlide(slides, i) }}" alt="slide" >
+    <img src="{{ showSlide(slides, i) }}" alt="slide">
   </div>
 
- <button id="botonImagen1" (click)="getPrev(slides, i)">Prev</button>
+  <button id="botonImagen1" (click)="getPrev(slides, i)">Prev</button>
 
- <button id="botonImagen1" (click)="getNext(slides, i)">Next</button>
+  <button id="botonImagen1" (click)="getNext(slides, i)">Next</button>
 
 </div>
 <div class="bdiv">
@@ -47,6 +47,16 @@
   </div>
   <img id="imagen2" src="./assets/img1.jpg" alt="imagen">
 </div>
+
+
+<!-- video -->
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g0ebS9Rjp1k" title="YouTube video player"
+  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+<!-- end video -->
 <div class="vdiv">
   <img id="imagen2" src="./assets/img1.jpg" alt="imagen">
   <div class="xdiv">
@@ -106,4 +116,3 @@
   </div>
   <img id="imagen2" src="./assets/img1.jpg" alt="imagen">
 </div>
-

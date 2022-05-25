@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-home-principal',
   templateUrl: './home-principal.component.html',
@@ -8,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePrincipalComponent implements OnInit {
 
+  constructor() {
 
-
-  constructor() { }
+  }
 
 
   public slides: string[] = ['./assets/img10.jpg', './assets/img18.jpg', './assets/img12.jpg', './assets/img13.jpg']
@@ -34,5 +33,7 @@ export class HomePrincipalComponent implements OnInit {
   ngOnInit(): void {
     this.i = 1;
   }
+
+
 
 }

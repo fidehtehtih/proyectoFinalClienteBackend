@@ -86,7 +86,7 @@
     align-items: center;
     text-align: left;
     min-height: 200px;
-    margin: 70px;
+    margin: 30px;
     display: flex;
     margin-left: 15%;
 }
@@ -112,4 +112,9 @@ table, td, th {
 .horario {
     min-width: 525px;
     justify-content: center;
+}
+
+#horario1{
+    text-align: center;
+    margin-top: 50px;
 }

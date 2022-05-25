@@ -58,18 +58,4 @@ export class AuthService {
   }
 
 
-  createProduct(pruduct: any): Observable<any> {
-    return this._api.postTypeRequest('auth/product', {
-      // id: pruduct.id,
-      name: pruduct.name,
-      imgProd: pruduct.imgProd,
-      desc: pruduct.desc,
-      price: pruduct.price,
-      cantidad: pruduct.cantidad,
-      category: pruduct.category,
-      categoryId: pruduct.categoryId,
-    });
-  }
-
-
 }

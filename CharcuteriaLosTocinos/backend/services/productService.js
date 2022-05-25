@@ -15,6 +15,7 @@ console.log(params);
                     reject({
                         message: "Id is in use, please try a different one",
                         statusCode: 400,
+                        data:err,
                     });
                 } else if (result.length === 0) {
                     db.query(

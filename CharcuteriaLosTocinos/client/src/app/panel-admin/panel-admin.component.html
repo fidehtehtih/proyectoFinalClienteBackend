@@ -3,10 +3,6 @@
         <h2>Añadir Productos</h2>
         <form #adminForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="input-container">
-                <label>Id del producto: </label><br>
-                <input type="number" class="form-control" name="prodId" [(ngModel)]="prodId" placeholder="Enter your id">
-            </div>
-            <div class="input-container">
                 <label>Nombre del producto: </label><br>
                 <input type="text" class="form-control" name="name" [(ngModel)]="name" placeholder="Enter your name">
             </div>

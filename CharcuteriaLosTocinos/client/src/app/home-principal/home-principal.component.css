@@ -32,6 +32,12 @@
     padding: 10px 20px;
     color: aliceblue;
 }
+#botonImagen1{
+    background-color: rgb(206, 33, 33);
+    border-radius: 1%;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+}
 /*Islote 1*/
 .vdiv{
     align-items: center;

@@ -14,7 +14,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { HomePrincipalComponent } from './home-principal/home-principal.component';
 
 const routes: Routes = [
-  { path: 'homePrincipal', component: HomeComponent },
+  { path: 'products', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'panel-admin', component:PanelAdminComponent  },

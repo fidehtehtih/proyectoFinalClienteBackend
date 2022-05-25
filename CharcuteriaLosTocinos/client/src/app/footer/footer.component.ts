@@ -1,15 +1,64 @@
 import { Component, OnInit } from '@angular/core';
+import { HostListener } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { CartService } from '../services/cart.service';
+import { TokenStorageService } from '../services/token-storage.service';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  screenHeight: any;
+  screenWidth: any;
+  isMenuOpen = false;
+  isMobile = false;
+  isLoggedIn = false;
+  dropdownVisible = false;
+  cartData: any;
 
-  constructor() { }
+  @HostListener('window:resize', ['$event'])
+  getScreenSize() {
+    this.screenHeight = window.innerHeight;
+    this.screenWidth = window.innerWidth;
 
-  ngOnInit(): void {
+    if (this.screenWidth > 768) this.isMobile = false;
+    else this.isMobile = true;
+  }
+  constructor(
+    private _token: TokenStorageService,
+    private _auth: AuthService,
+    private _cart: CartService
+  ) {
+    this.getScreenSize();
+    this._auth.user.subscribe((user) => {
+      if (user) this.isLoggedIn = true;
+      else this.isLoggedIn = false;
+    });
+    this._cart.cartDataObs$.subscribe((cartData) => {
+      this.cartData = cartData;
+    });
   }
 
+  ngOnInit(): void {
+    if (this._token.getUser()) this.isLoggedIn = true;
+    else this.isLoggedIn = false;
+  }
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
+  }
+
+  removeProductFromCart(id: number) {
+    this._cart.removeProduct(id);
+  }
+
+  logout() {
+    this._auth.logout();
+    this.isMenuOpen = false;
+  }
 }

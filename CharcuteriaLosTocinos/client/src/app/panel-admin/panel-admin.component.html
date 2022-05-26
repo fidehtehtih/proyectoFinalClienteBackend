@@ -1,7 +1,7 @@
 <div class="profile-container">
     <div class="form-container">
         <h2>Añadir Productos</h2>
-        <form #adminForm="ngForm" (ngSubmit)="onSubmit()">
+        <form #adminForm="ngForm" (ngSubmit)="onSubmitPost()">
             <div class="input-container">
                 <label>Nombre del producto: </label><br>
                 <input type="text" class="form-control" name="name" [(ngModel)]="name" placeholder="Enter your name">
@@ -43,7 +43,78 @@
                   </select>
             </div><br>
             <div class="cta-container">
-                <button type="submit">Enviar</button>
+                <button type="submit">Insertar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="profile-container">
+    <div class="form-container">
+        <h2>Editar Productos</h2>
+        <form #adminForm2="ngForm" (ngSubmit)="onSubmitUpdate()">
+            <div class="input-container">
+                <label>Id del producto: </label><br>
+                <input type="text" class="form-control" name="idProd2" [(ngModel)]="idProd2" placeholder="Enter id">
+            </div>
+            <div class="input-container">
+                <label>Nombre del producto: </label><br>
+                <input type="text" class="form-control" name="name2" [(ngModel)]="name2" placeholder="Enter your name">
+            </div>
+            <div class="input-container">
+                <label>Imagen del producto: </label><br>
+                <input type="text" class="form-control" name="imgProd2" [(ngModel)]="imgProd2" placeholder="Enter your url image">
+            </div>
+            <div class="input-container">
+                <label>Descripción del producto: </label><br>
+                <input type="text" class="form-control" name="desc2" [(ngModel)]="desc2" placeholder="Enter your description">
+            </div>
+            <div class="input-container">
+                <label>Precio del producto: </label><br>
+                <input type="number" class="form-control" name="price2" [(ngModel)]="price2" placeholder="Enter the price">
+            </div>
+            <div class="input-container">
+                <label>Cantidad: </label><br>
+                <input type="number" class="form-control" name="cantidad2" [(ngModel)]="cantidad2" placeholder="Enter the quantity">
+            </div>
+            <div class="input-container">
+                <label>Categoria: </label><br>
+                <!-- <input type="text" class="form-control" name="category" [(ngModel)]="category" placeholder="Enter the category"> -->
+                <select type="text" class="form-control" name="category2" [(ngModel)]="category2" placeholder="Enter the category">
+                    <option value="Embutido" selected>Embutido</option>
+                    <option value="Carne">Carne</option>
+                    <option value="Queso">Queso</option>
+                    <option value="Otros">Otros</option>
+                  </select>
+            </div>
+            <div class="input-container">
+                <label>Categoria ID: </label><br>
+                <!-- <input type="number" class="form-control" name="categoryId" [(ngModel)]="categoryId" placeholder="Enter the categoryId"> -->
+                <select type="number" class="form-control" name="categoryId2" [(ngModel)]="categoryId2" placeholder="Enter the categoryId">
+                    <option value=1 selected>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                  </select>
+            </div><br>
+            <div class="cta-container">
+                <button type="submit">Actualizar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="profile-container">
+    <div class="form-container">
+        <h2>Eliminar Productos</h2>
+        <form #adminForm2="ngForm" (ngSubmit)="onSubmitDelete()">
+            <div class="input-container">
+                <label>Id del producto: </label><br>
+                <input type="text" class="form-control" name="idProd3" [(ngModel)]="idProd3" placeholder="Enter id">
+            </div>
+            <div class="cta-container">
+                <button type="submit">Borrar</button>
             </div>
         </form>
     </div>

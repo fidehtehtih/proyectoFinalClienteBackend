@@ -7,29 +7,29 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HomePrincipalComponent implements OnInit {
 
-  @Input() name: string;
+//   @Input() name: string;
 
-  imageObject = [{
-    image: './assets/img10.jpg',
-    thumbImage: './assets/img10.jpg'
-}, {
-    image: './assets/img18.jpg',
-    thumbImage: './assets/img18.jpg'
-}, {
-    image: './assets/img12.jpg',
-    thumbImage: './assets/img12.jpg',
-},{
-    image: './assets/img13.jpg',
-    thumbImage: './assets/img13.jpg',
-    title: 'Hummingbirds are amazing creatures'
-}, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg'
-}, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
-    title: 'Example two with title.'
-}];
+//   imageObject = [{
+//     image: './assets/img10.jpg',
+//     thumbImage: './assets/img10.jpg'
+// }, {
+//     image: './assets/img18.jpg',
+//     thumbImage: './assets/img18.jpg'
+// }, {
+//     image: './assets/img12.jpg',
+//     thumbImage: './assets/img12.jpg',
+// },{
+//     image: './assets/img13.jpg',
+//     thumbImage: './assets/img13.jpg',
+//     title: 'Hummingbirds are amazing creatures'
+// }, {
+//     image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg',
+//     thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg'
+// }, {
+//     image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
+//     thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
+//     title: 'Example two with title.'
+// }];
 
   constructor() {
 

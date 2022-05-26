@@ -38,7 +38,6 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PanelAdminComponent } from './panel-admin/panel-admin.component';
 import { HomePrincipalComponent } from './home-principal/home-principal.component';
-import { NgImageSliderModule } from 'ng-image-slider';
 
 
 
@@ -82,7 +81,6 @@ registerLocaleData(en);
     NzNotificationModule,
     NzProgressModule,
     NzTableModule,
-    NgImageSliderModule
   ],
   providers: [
     authInterceptorProviders,

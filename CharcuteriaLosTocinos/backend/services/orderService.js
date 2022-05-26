@@ -1,14 +1,14 @@
 const db = require("../database/db");
 
 exports.createOrder = async(params) => {
-    const { userId, cart } = params;
+    const { userId,email, cart } = params;
 
     if (!cart) throw { message: "cart was not provided", statusCode: 400 };
     if (!userId) throw { message: "userId was not provided", statusCode: 400 };
 
     return new Promise((resolve, reject) => {
         db.query(
-            `INSERT INTO orders (user_id) VALUES (?)`, [userId],
+            `INSERT INTO orders (user_id,email) VALUES (?,?)`, [userId,email],
             (err, result) => {
                 if (err) reject({ message: err, statusCode: 500 });
 
@@ -89,13 +89,13 @@ exports.getSingleOrder = async(params) => {
 };
 
 exports.getOrders = async(params) => {
-    const { userId } = params;
+    const { email } = params;
 
-    if (!userId) throw { message: "userId was not provided", statusCode: 400 };
+    if (!email) throw { message: "email was not provided", statusCode: 400 };
 
     return new Promise((resolve, reject) => {
         db.query(
-            `SELECT * FROM orders INNER JOIN orders_details ON ( orders.id = orders_details.order_id ) WHERE user_id = ?`, [userId],
+            `SELECT * FROM orders INNER JOIN orders_details ON ( orders.id = orders_details.order_id ) WHERE email = ?`, [email],
             (err, result) => {
                 if (err) reject({ message: err, statusCode: 500 });
 

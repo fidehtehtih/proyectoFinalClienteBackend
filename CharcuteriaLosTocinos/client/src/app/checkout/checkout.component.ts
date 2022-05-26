@@ -42,7 +42,7 @@ export class CheckoutComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       this._cart
-        .submitCheckout(this.billingAddress[0].value, this.cartData)
+        .submitCheckout(this.billingAddress[0].value,this.billingAddress[2].value ,this.cartData)
         .subscribe(
           (res: any) => {
             console.log(res);

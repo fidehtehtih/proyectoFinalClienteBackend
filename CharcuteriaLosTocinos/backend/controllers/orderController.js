@@ -5,8 +5,8 @@ const {
 } = require("../services/orderService");
 
 exports.create_order = async(req, res, next) => {
-    const { userId, cart } = req.body;
-    createOrder({ userId, cart })
+    const { userId,email, cart } = req.body;
+    createOrder({ userId,email, cart })
         .then((result) => {
             res.status(result.statusCode).send({...result });
         })
@@ -30,8 +30,8 @@ exports.get_single_order = async(req, res, next) => {
 };
 
 exports.get_orders = async(req, res, next) => {
-    const { userId } = req.query;
-    getOrders({ userId })
+    const { email } = req.query;
+    getOrders({ email })
         .then((result) => {
             const { message, data } = result;
             res.status(200).send({ message, data });

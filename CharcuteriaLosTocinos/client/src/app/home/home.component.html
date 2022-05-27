@@ -1,7 +1,7 @@
 <div class="home-container">
     <div class="categories">
         <div class="categories__header">
-            <h2>Categories</h2>
+            <h2>Categorias</h2>
         </div>
         <div class="categories__list">
             <swiper [zoom]="false" [slidesPerView]="screenWidth > 1200 ? 3 : 1" [spaceBetween]="50" [pagination]="true" [loop]="true">
@@ -13,7 +13,7 @@
     </div>
     <div class="products">
         <div class="products__header">
-            <h2>All Products</h2>
+            <h2>Todos nuestros productos</h2>
         </div>
         <div *ngIf="loading" class="products__loading">
             <ng-template #indicatorTemplate>
@@ -28,7 +28,7 @@
     </div>
     <div class="load-products">
         <button nz-button (click)="showMoreProducts()" [nzLoading]="additionalLoading">
-      Show more
+      Mostrar más
     </button>
     </div>
 </div>

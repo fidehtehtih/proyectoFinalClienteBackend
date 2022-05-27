@@ -116,11 +116,9 @@ exports.dropProduct = async(params) => {
                                     data: err,
                                 });
                             } else {
-                                // const token = jwt.sign({ data: result }, "secret");
                                 resolve({
                                     data: result,
                                     message: "You have successfully drop ",
-                                    // token: token,
                                     statusCode: 200,
                                 });
                             }

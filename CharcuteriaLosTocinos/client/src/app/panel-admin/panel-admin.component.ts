@@ -86,7 +86,7 @@ onSubmitUpdate() {
 
 onSubmitDelete(){
   this._prod.dropProduct({
-    idProd: this.idProd3,
+    idProd3: this.idProd3,
   }).subscribe(
     (res) => {
       console.log(res);

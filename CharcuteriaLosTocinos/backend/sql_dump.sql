@@ -255,8 +255,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `fname`, `lname`, `age`, `role`, `photoUrl`, `type`) VALUES
-(1,'alex' , 'e10adc3949ba59abbe56e057f20f883e', 'alex@gmail.com', 'not set', 'not set', 21, 777, NULL, 'local'),
-(2, 'edgar', '044d8d640801934556ec850a068a4bd9', 'edgar@gmail.com', 'not set', 'not set', 27, 555, NULL, 'local');
+(1,'alex' , 'e10adc3949ba59abbe56e057f20f883e', 'alex@gmail.com', 'not set', 'not set', 21, 777, NULL, 'local'), --123456
+(2, 'edgar', '044d8d640801934556ec850a068a4bd9', 'edgar@gmail.com', 'not set', 'not set', 27, 555, NULL, 'local');--Monlau2020
 --
 -- Indexes for dumped tables
 --

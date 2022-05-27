@@ -37,7 +37,8 @@ export class ProductService {
       desc: pruduct.desc,
       price: pruduct.price,
       cantidad: pruduct.cantidad,
-      category: pruduct.category
+      category: pruduct.category,
+      categoryId: pruduct.categoryId
     });
   }
 
@@ -49,7 +50,8 @@ export class ProductService {
       desc2: pruduct.desc2,
       price2: pruduct.price2,
       cantidad2: pruduct.cantidad2,
-      category2: pruduct.category2
+      category2: pruduct.category2,
+      categoryId2: pruduct.categoryId2
     });
   }
 

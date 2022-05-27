@@ -1,7 +1,7 @@
 const db = require("../database/db");
 
 exports.createProduct = async(params) => {
-    const { name, imgProd, desc, price, cantidad, category } = params;
+    const { name, imgProd, desc, price, cantidad, category, categoryId } = params;
     console.log(params);
     return new Promise((resolve, reject) => {
 
@@ -18,7 +18,7 @@ exports.createProduct = async(params) => {
                     });
                 } else if (result.length === 0) {
                     db.query(
-                        `INSERT INTO products (title, image, description, price, quantity, short_desc) VALUES (?,?,?,?,?,?)`, [name, imgProd, desc, price, cantidad, category],
+                        `INSERT INTO products (title, image, description, price, quantity, short_desc, cat_id) VALUES (?,?,?,?,?,?,?)`, [name, imgProd, desc, price, cantidad, category, categoryId],
                         (err, result) => {
                             if (err) {
                                 reject({
@@ -44,7 +44,7 @@ exports.createProduct = async(params) => {
 };
 
 exports.updateProduct = async(params) => {
-    const { idProd2, name2, imgProd2, desc2, price2, cantidad2, category2 } = params;
+    const { idProd2, name2, imgProd2, desc2, price2, cantidad2, category2, categoryId2 } = params;
     console.log(params);
     return new Promise((resolve, reject) => {
 
@@ -61,7 +61,7 @@ exports.updateProduct = async(params) => {
                     });
                 } else if (result.length > 0) {
                     let query = "";
-                    query = `title = '${name2}', image = '${imgProd2}', description = '${desc2}', price = '${price2}', quantity = '${cantidad2}', short_desc = '${category2}'`;
+                    query = `title = '${name2}', image = '${imgProd2}', description = '${desc2}', price = '${price2}', quantity = '${cantidad2}', short_desc = '${category2}', cat_id = '${categoryId2}'`;
                     db.query(
                         `UPDATE products SET ${query} WHERE id = ?`, [idProd2],
                         (err, result) => {

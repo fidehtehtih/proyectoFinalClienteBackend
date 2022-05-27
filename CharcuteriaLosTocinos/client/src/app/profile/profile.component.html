@@ -1,6 +1,6 @@
 <div class="profile-container">
     <div class="form-container">
-        <h2>Profile</h2>
+        <h2>Perfil</h2>
         <nz-alert [nzType]="alertType" nzShowIcon [nzMessage]="alertMessage" [ngStyle]="{ marginBottom: '12px' }" *ngIf="alertVisible"></nz-alert>
         <form (ngSubmit)="onSubmit()">
             <div class="input-container" *ngFor="let field of user">

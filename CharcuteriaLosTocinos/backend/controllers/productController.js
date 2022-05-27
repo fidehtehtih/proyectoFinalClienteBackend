@@ -3,8 +3,8 @@ const { updateProduct } = require("../services/productService");
 const { dropProduct } = require("../services/productService");
 
 exports.createProduct = async(req, res, next) => {
-    const { name, imgProd, desc, price, cantidad, category, categoryId } = req.body;
-    createProduct({ name, imgProd, desc, price, cantidad, category, categoryId })
+    const { name, imgProd, desc, price, cantidad, category } = req.body;
+    createProduct({ name, imgProd, desc, price, cantidad, category })
         .then((result) => {
             res.status(result.statusCode).send({...result });
         })
@@ -15,8 +15,8 @@ exports.createProduct = async(req, res, next) => {
 };
 
 exports.updateProduct = async(req, res, next) => {
-    const { idProd2, name2, imgProd2, desc2, price2, cantidad2, category2, categoryId2 } = req.body;
-    updateProduct({ idProd2, name2, imgProd2, desc2, price2, cantidad2, category2, categoryId2 })
+    const { idProd2, name2, imgProd2, desc2, price2, cantidad2, category2 } = req.body;
+    updateProduct({ idProd2, name2, imgProd2, desc2, price2, cantidad2, category2 })
         .then((result) => {
             res.status(result.statusCode).send({...result });
         })

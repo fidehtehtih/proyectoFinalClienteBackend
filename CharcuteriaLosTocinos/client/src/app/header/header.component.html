@@ -24,7 +24,7 @@
             <nz-dropdown-menu #menu="nzDropdownMenu">
                 <div class="cart-dropdown">
                     <div class="cart-dropdown__empty" *ngIf="cartData.products.length === 0">
-                        Your cart is empty.
+                        Tu carro esta vacío.
                     </div>
                     <div class="cart-dropdown__content" *ngIf="cartData.products.length !== 0">
                         <div class="product-list">
@@ -43,7 +43,7 @@
                                         <div class="product-name">{{ product.title }}</div>
                                         <div class="product-amount">
                                             {{ product.quantity }} x
-                                            <span>{{ product.price | currency: "USD" }}</span>
+                                            <span>{{ product.price | currency: "€" }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -51,10 +51,10 @@
                         </div>
                         <div class="cart-info">
                             <div class="selected-amount">
-                                {{ cartData.products.length }} Item(s) selected
+                                {{ cartData.products.length }} Productos seleccionados
                             </div>
                             <div class="total-price">
-                                Total: {{ cartData.total | currency: "USD" }}
+                                Total: {{ cartData.total | currency: "€" }}
                             </div>
                         </div>
                         <div class="cart-cta">
@@ -63,14 +63,14 @@
                   borderRight: 'none',
                   borderBottom: 'none'
                 }">
-                View cart
+                Ver carro
               </button>
                             <button nz-button nzType="primary" nzSize="large" routerLink="/checkout" (click)="toggleDropdown()" [ngStyle]="{
                   borderLeft: 'none',
                   borderRight: 'none',
                   borderBottom: 'none'
                 }">
-                Checkout
+                Comprar
               </button>
                         </div>
                     </div>
@@ -94,18 +94,18 @@
                 <!-- <li routerLink="/profile" (click)="toggleMenu()">Profile</li> -->
                 <li routerLink="/gallery" (click)="toggleMenu()">Galeria</li>
                 <li routerLink="/order-history" (click)="toggleMenu()">Order History</li>
-                <li routerLink="/panel-admin" (click)="toggleMenu()">Panel de admin</li>
+                <!-- <li routerLink="/panel-admin" (click)="toggleMenu()">Panel de admin</li> -->
             </ul>
         </nav>
         <div class="🍑">
             <button nz-button routerLink="/login" (click)="toggleMenu()" *ngIf="!isLoggedIn">
-        Sign in
+        Inicio sesión
       </button>
             <button nz-button routerLink="/register" (click)="toggleMenu()" *ngIf="!isLoggedIn">
-        Sign up
+        Resgistro
       </button>
             <button nz-button (click)="logout() && toggleMenu()" *ngIf="isLoggedIn">
-        Sign out
+        Cerrar sesión
       </button>
         </div>
     </div>

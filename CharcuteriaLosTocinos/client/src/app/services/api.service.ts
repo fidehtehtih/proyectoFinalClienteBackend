@@ -26,7 +26,15 @@ export class ApiService {
     );
   }
   putTypeRequest(url: string, payload: any) {
-    return this._http.put(`${this.baseUrl}${url}`, payload).pipe(
+    return this._http.post(`${this.baseUrl}${url}`, payload).pipe(
+      map((res) => {
+        return res;
+      })
+    );
+  }
+
+  dropTypeRequest(url: string, idProd3: any) {
+    return this._http.delete(`${this.baseUrl}${url}`, idProd3).pipe(
       map((res) => {
         return res;
       })

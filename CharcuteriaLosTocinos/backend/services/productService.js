@@ -22,7 +22,7 @@ exports.createProduct = async(params) => {
                         (err, result) => {
                             if (err) {
                                 reject({
-                                    message: "Something went wrong, please try again" + err,
+                                    message: "Something went wrong, please try again " + err,
                                     statusCode: 400,
                                     data: err,
                                 });
@@ -89,25 +89,66 @@ exports.updateProduct = async(params) => {
 };
 
 
+// exports.dropProduct = async(params) => {
+//     const { idProd3 } = params;
+//     console.log(params);
+//     return new Promise((resolve, reject) => {
+
+//         db.query(
+
+//             `SELECT id FROM products WHERE id = ?`, [idProd3],
+//             console.log(idProd3),
+//             (err, result) => {
+//                 if (result.length === 0) {
+//                     reject({
+//                         message: "Id did not exist E",
+//                         statusCode: 400,
+//                         data: err,
+//                     });
+//                 } else if (result.length > 0) {
+//                     db.query(
+//                         ` DELETE FROM products WHERE id = ?`, [idProd3],
+//                         (err, result) => {
+//                             if (err) {
+//                                 reject({
+//                                     message: "Something went wrong, please try again" + err,
+//                                     statusCode: 400,
+//                                     data: err,
+//                                 });
+//                             } else {
+//                                 resolve({
+//                                     data: result,
+//                                     message: "You have successfully drop ",
+//                                     statusCode: 200,
+//                                 });
+//                             }
+//                         }
+//                     );
+//                 }
+//             }
+//         );
+//     });
+// };
+
 exports.dropProduct = async(params) => {
     const { idProd3 } = params;
     console.log(params);
     return new Promise((resolve, reject) => {
 
         db.query(
+            `DELETE FROM products WHERE id = ?`, [idProd3],
 
-            `SELECT id FROM products WHERE id = ?`, [idProd3],
             console.log(idProd3),
             (err, result) => {
-                if (result.length === 0) {
+                if (result.length > 0) {
                     reject({
-                        message: "Id did not exist E",
+                        message: "You have successfully drop",
                         statusCode: 400,
                         data: err,
                     });
-                } else if (result.length > 0) {
+                } else if (result.length === 0) {
                     db.query(
-                        ` DELETE FROM products WHERE id = ?`, [idProd3],
+                        `SELECT id FROM products WHERE id = ?`, [idProd3],
                         (err, result) => {
                             if (err) {
                                 reject({
@@ -118,7 +159,7 @@ exports.dropProduct = async(params) => {
                             } else {
                                 resolve({
                                     data: result,
-                                    message: "You have successfully drop ",
+                                    message: "Id did not exist E",
                                     statusCode: 200,
                                 });
                             }

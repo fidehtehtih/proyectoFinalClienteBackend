@@ -20,7 +20,7 @@ export class PanelAdminComponent implements OnInit {
   price:number;
   cantidad:number;
   category:Text;
-  categoryId:number;
+  categoryId:Number;
 
   idProd2:Number;
   name2:Text;
@@ -29,7 +29,7 @@ export class PanelAdminComponent implements OnInit {
   price2:number;
   cantidad2:number;
   category2:Text;
-  categoryId2:number;
+  categoryId2:Number;
 
   idProd3:Number;
 
@@ -52,7 +52,7 @@ export class PanelAdminComponent implements OnInit {
       price: this.price,
       cantidad: this.cantidad,
       category: this.category,
-      categoryId: this.categoryId,
+      categoryId: this.categoryId
     }).subscribe(
       (res) => {
         console.log(res);
@@ -72,7 +72,7 @@ onSubmitUpdate() {
     price2: this.price2,
     cantidad2: this.cantidad2,
     category2: this.category2,
-    categoryId2: this.categoryId2,
+    categoryId2: this.categoryId2
   }).subscribe(
     (res) => {
       console.log(res);

@@ -37,27 +37,25 @@ export class ProductService {
       desc: pruduct.desc,
       price: pruduct.price,
       cantidad: pruduct.cantidad,
-      category: pruduct.category,
-      categoryId: pruduct.categoryId,
+      category: pruduct.category
     });
   }
 
   updateProduct(pruduct: any): Observable<any> {
-    return this._api.postTypeRequest('productadmin/update', {
+    return this._api.putTypeRequest('productadmin/update', {
       idProd2: pruduct.idProd2,
       name2: pruduct.name2,
       imgProd2: pruduct.imgProd2,
       desc2: pruduct.desc2,
       price2: pruduct.price2,
       cantidad2: pruduct.cantidad2,
-      category2: pruduct.category2,
-      categoryId2: pruduct.categoryId2,
+      category2: pruduct.category2
     });
   }
 
   dropProduct(pruduct: any): Observable<any> {
-    return this._api.postTypeRequest('productadmin/drop', {
-      idProd3: pruduct.idProd3,
+    return this._api.dropTypeRequest('productadmin/drop', {
+      idProd3: pruduct.idProd3
     });
   }
   

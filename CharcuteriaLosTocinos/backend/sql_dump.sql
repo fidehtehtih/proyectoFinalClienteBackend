@@ -86,8 +86,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `email`) VALUES
-(7, 1,'edgar@gmail.com'),
-(119, 2,'edgar@gmail.com');
+(7, 22,'edgar@gmail.com'),
+(119, 22,'edgar@gmail.com');
 
 -- --------------------------------------------------------
 

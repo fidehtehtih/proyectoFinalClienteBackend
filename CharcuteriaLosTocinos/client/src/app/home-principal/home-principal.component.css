@@ -24,7 +24,7 @@
     color: aliceblue;
 }
 #textoImagen{
-    margin-left: 50px;
+    margin-left: 15%;
 }
 #botonImagen{
     background-color: rgb(206, 33, 33);
@@ -46,6 +46,7 @@
     min-height: 200px;
     margin: 20px;
     margin-left: 15%;
+    margin-right: 15%;
     margin-bottom: 5%;
     margin-top: 3%;
 }
@@ -68,6 +69,8 @@
     min-height: 200px;
     margin: 30px;
     display: flex;
+    margin-right: 15%;
+    margin-left: 15%;
 }
 .ndiv{
     min-height: 200px;
@@ -141,12 +144,13 @@ html {
     margin: 30px;
     display: flex;
     margin-left: 15%;
+    margin-right: 15%;
 }
 
 .ndiv2 {
     min-height: 200px;
     max-width: 900px;
-    margin-right: 555px;
+    margin-right: 41%;
 }
 
 table {

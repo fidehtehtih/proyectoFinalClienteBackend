@@ -56,7 +56,7 @@ export class ProductService {
   }
 
   dropProduct(pruduct: any): Observable<any> {
-    return this._api.dropTypeRequest('productadmin/drop', {
+    return this._api.dropTypeRequest('productadmin/delete', {
       idProd3: pruduct.idProd3
     });
   }

@@ -32,6 +32,7 @@ export class PanelAdminComponent implements OnInit {
   categoryId2:Number;
 
   idProd3:Number;
+  name3:Text;
 
   errorMessage = '';
 
@@ -86,7 +87,7 @@ onSubmitUpdate() {
 
 onSubmitDelete(){
   this._prod.dropProduct({
-    idProd3: this.idProd3,
+    idProd3: this.idProd3
   }).subscribe(
     (res) => {
       console.log(res);

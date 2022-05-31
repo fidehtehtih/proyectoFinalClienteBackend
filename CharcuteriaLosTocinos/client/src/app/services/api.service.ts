@@ -34,7 +34,7 @@ export class ApiService {
   }
 
   dropTypeRequest(url: string, idProd3: any) {
-    return this._http.delete(`${this.baseUrl}${url}`, idProd3).pipe(
+    return this._http.post(`${this.baseUrl}${url}`, idProd3).pipe(
       map((res) => {
         return res;
       })

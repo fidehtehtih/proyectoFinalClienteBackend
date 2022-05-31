@@ -28,6 +28,7 @@ exports.updateProduct = async(req, res, next) => {
 
 exports.dropProduct = async(req, res, next) => {
     const { idProd3 } = req.body;
+    // console.log(idProd3)
     dropProduct({ idProd3 })
         .then((result) => {
             res.status(result.statusCode).send({...result });

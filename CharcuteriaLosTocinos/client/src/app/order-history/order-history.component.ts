@@ -6,7 +6,7 @@ import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-order-history',
   templateUrl: './order-history.component.html',
-  styleUrls: ['./order-history.component.scss'],
+  styleUrls: ['./order-history.component.css'],
 })
 export class OrderHistoryComponent implements OnInit {
   listOfData: any[] = [

@@ -43,48 +43,20 @@
       <form>
         <div class="input-container">
           <label for="">Numero de tarjeta</label>
-          <input
-            nz-input
-            type="text"
-            name="cardNumber"
-            [(value)]="cardNumber"
-            [(ngModel)]="cardNumber"
-            placeholder="1234 1234 1234 1234"
-          />
+          <input nz-input type="number" name="cardNumber" [(value)]="cardNumber" [(ngModel)]="cardNumber" placeholder="1234 1234 1234 1234"/>
         </div>
         <div class="input-container">
           <label for="">Nombre del titular</label>
-          <input
-            nz-input
-            type="text"
-            name="cardName"
-            [(value)]="cardName"
-            [(ngModel)]="cardName"
-            placeholder="John Doe"
-          />
+          <input nz-input type="text" name="cardName" [(value)]="cardName" [(ngModel)]="cardName" placeholder="Nombre del titular"/>
         </div>
         <div class="‼️">
           <div class="input-container">
             <label for="">Fecha de expedición</label>
-            <input
-              nz-input
-              type="text"
-              name="cardExpiry"
-              [(value)]="cardExpiry"
-              [(ngModel)]="cardExpiry"
-              placeholder="06/30"
-            />
+            <input nz-input type="text" name="cardExpiry" [(value)]="cardExpiry" [(ngModel)]="cardExpiry" placeholder="00/00"/>
           </div>
           <div class="input-container">
             <label for="">Código de seguridad</label>
-            <input
-              nz-input
-              type="text"
-              name="cardCode"
-              [(value)]="cardCode"
-              [(ngModel)]="cardCode"
-              placeholder="123"
-            />
+            <input nz-input type="text" name="cardCode" [(value)]="cardCode" [(ngModel)]="cardCode" placeholder="123"/>
           </div>
         </div>
       </form>
@@ -109,12 +81,7 @@
             <span>Pedido total</span> {{ cartData.total | currency: "€" }}
           </div>
         </div>
-        <button
-          nz-button
-          nzType="primary"
-          (click)="submitCheckout()"
-          [nzLoading]="loading"
-        >
+        <button nz-button nzType="primary" (click)="submitCheckout()" [nzLoading]="loading">
           Realizar pedido
         </button>
       </div>

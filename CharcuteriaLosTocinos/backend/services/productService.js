@@ -95,16 +95,14 @@ exports.dropProduct = async(params) => {
     return new Promise((resolve, reject) => {
         db.query(
             `DELETE FROM products WHERE id = ?`, [idProd3],
-
-            console.log(idProd3),
             (err, result) => {
-                if (result.length > 0) {
+                if (result.length == 0) {
                     reject({
                         message: "You have successfully drop",
                         statusCode: 400,
                         data: err,
                     });
-                } else if (result.length === 0) {
+                } else if (result.length > 0) {
                     db.query(
                         `SELECT id FROM products WHERE id = ?`, [idProd3],
                         (err, result) => {

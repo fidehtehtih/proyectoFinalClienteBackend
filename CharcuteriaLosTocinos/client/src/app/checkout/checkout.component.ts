@@ -42,7 +42,7 @@ export class CheckoutComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       this._cart
-        .submitCheckout(this.billingAddress[0].value,this.billingAddress[2].value ,this.cartData)
+        .submitCheckout(1,this.billingAddress[1].value ,this.cartData)
         .subscribe(
           (res: any) => {
             console.log(res);
@@ -100,51 +100,51 @@ export class CheckoutComponent implements OnInit {
   }
 
   billingAddress = [
+    // {
+    //   name: 'ID',
+    //   placeholder: 'ID',
+    //   type: 'number',
+    //   value: '',
+    // },
     {
-      name: 'ID',
-      placeholder: 'ID',
-      type: 'number',
-      value: '',
-    },
-    {
-      name: 'Username',
-      placeholder: 'Username',
+      name: 'Usuario',
+      placeholder: 'Usuario',
       type: 'text',
       value: '',
     },
     {
       name: 'Email',
-      placeholder: 'Enter your email address',
+      placeholder: 'Introduce tu email',
       type: 'email',
       value: '',
     },
     {
-      name: 'Address',
-      placeholder: 'Enter your address',
+      name: 'Dirección',
+      placeholder: 'Introduce tu dirección',
       type: 'text',
       value: '',
     },
     {
-      name: 'City',
-      placeholder: 'Enter your city',
+      name: 'Ciudad',
+      placeholder: 'Introduce tu ciudad',
       type: 'text',
       value: '',
     },
     {
-      name: 'Country',
-      placeholder: 'Enter your country',
+      name: 'País',
+      placeholder: 'Introduce tu país',
       type: 'text',
       value: '',
     },
     {
-      name: 'ZIP',
-      placeholder: 'Enter your zip code',
+      name: 'DNI',
+      placeholder: 'Introduce tu DNI',
       type: 'text',
       value: '',
     },
     {
-      name: 'Telephone',
-      placeholder: 'Enter your telephone number',
+      name: 'Teléfono',
+      placeholder: 'Introduce tu teléfono',
       type: 'text',
       value: '',
     },

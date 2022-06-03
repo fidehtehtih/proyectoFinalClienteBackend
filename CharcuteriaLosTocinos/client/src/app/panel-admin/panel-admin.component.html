@@ -4,7 +4,7 @@
         <form #adminForm="ngForm" (ngSubmit)="onSubmitPost()">
             <div class="input-container">
                 <label>Nombre del producto: </label><br>
-                <input type="text" class="form-control" name="name" [(ngModel)]="name" placeholder="Enter your name">
+                <input type="text" class="form-control" name="name" [(ngModel)]="name" placeholder="Enter your name" min="1" max="99999">
             </div>
             <div class="input-container">
                 <label>Imagen del producto: </label><br>
@@ -16,11 +16,11 @@
             </div>
             <div class="input-container">
                 <label>Precio del producto: </label><br>
-                <input type="number" class="form-control" name="price" [(ngModel)]="price" placeholder="Enter the price">
+                <input type="number" class="form-control" name="price" [(ngModel)]="price" placeholder="Enter the price" min="0.1" max="999">
             </div>
             <div class="input-container">
                 <label>Cantidad: </label><br>
-                <input type="number" class="form-control" name="cantidad" [(ngModel)]="cantidad" placeholder="Enter the quantity">
+                <input type="number" class="form-control" name="cantidad" [(ngModel)]="cantidad" placeholder="Enter the quantity" min="1" max="999">
             </div>
             <div class="input-container">
                 <label>Categoria: </label><br>
@@ -55,7 +55,7 @@
         <form #adminForm2="ngForm" (ngSubmit)="onSubmitUpdate()">
             <div class="input-container">
                 <label>Id del producto: </label><br>
-                <input type="text" class="form-control" name="idProd2" [(ngModel)]="idProd2" placeholder="Enter id">
+                <input type="text" class="form-control" name="idProd2" [(ngModel)]="idProd2" placeholder="Enter id" min="1" max="99999">
             </div>
             <div class="input-container">
                 <label>Nombre del producto: </label><br>
@@ -71,11 +71,11 @@
             </div>
             <div class="input-container">
                 <label>Precio del producto: </label><br>
-                <input type="number" class="form-control" name="price2" [(ngModel)]="price2" placeholder="Enter the price">
+                <input type="number" class="form-control" name="price2" [(ngModel)]="price2" placeholder="Enter the price" min="0.1" max="999">
             </div>
             <div class="input-container">
                 <label>Cantidad: </label><br>
-                <input type="number" class="form-control" name="cantidad2" [(ngModel)]="cantidad2" placeholder="Enter the quantity">
+                <input type="number" class="form-control" name="cantidad2" [(ngModel)]="cantidad2" placeholder="Enter the quantity" min="1" max="999">
             </div>
             <div class="input-container">
                 <label>Categoria: </label><br>
@@ -109,7 +109,7 @@
         <form #adminForm2="ngForm" (ngSubmit)="onSubmitDelete()">
             <div class="input-container">
                 <label>Id del producto: </label><br>
-                <input type="text" class="form-control" name="idProd3" [(ngModel)]="idProd3" placeholder="Enter id">
+                <input type="text" class="form-control" name="idProd3" [(ngModel)]="idProd3" placeholder="Enter id" min="1" max="99999">
             </div>
             <!-- <div class="input-container">
                 <label>Nombre del producto: </label><br>

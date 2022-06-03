@@ -1,139 +1,117 @@
 <div class="checkout-container">
-  <div class="progress-container">
-    <nz-progress
-      [nzPercent]="getProgressPrecent()"
-      [nzShowInfo]="false"
-      [nzStrokeWidth]="3"
-    ></nz-progress>
-  </div>
+    <div class="progress-container">
+        <nz-progress [nzPercent]="getProgressPrecent()" [nzShowInfo]="false" [nzStrokeWidth]="3"></nz-progress>
+    </div>
 
-  <!-- FIRST STEP -->
-  <div *ngIf="currentStep === 1">
-    <div class="billing-container">
-      <h2>Dirección de envío</h2>
-      <form>
-        <div
-          class="input-container"
-          *ngFor="let field of billingAddress; index as i"
-        >
-          <label for="">{{ field.name }}</label>
-          <input
-            nz-input
-            [type]="field.type"
-            [name]="field.name"
-            [placeholder]="field.placeholder"
-            [(value)]="field.value"
-            [(ngModel)]="field.value"
-          />
-        </div>
-      </form>
-      <button
-        nz-button
-        (click)="submitBilling()">
+    <!-- FIRST STEP -->
+    <div *ngIf="currentStep === 1">
+        <div class="billing-container">
+            <h2>Dirección de envío</h2>
+            <form>
+                <div class="input-container" *ngFor="let field of billingAddress; index as i">
+                    <label for="">{{ field.name }}</label>
+                    <input nz-input [type]="field.type" [name]="field.name" [placeholder]="field.placeholder" [(value)]="field.value" [(ngModel)]="field.value" />
+                </div>
+            </form>
+            <button nz-button (click)="submitBilling()">
         Continuar
       </button>
+        </div>
     </div>
-  </div>
-  <!-- SECOND STEP -->
-  <div *ngIf="currentStep === 2">
-    <div class="payment-container">
-      <h2>Detalle de los pagos</h2>
-      <form>
-        <div class="input-container">
-          <label for="">Numero de tarjeta</label>
-          <input nz-input type="number" name="cardNumber" maxlength="16" autocomplete=off [(value)]="cardNumber" [(ngModel)]="cardNumber" placeholder="1234123412341234"/>
-        </div>
-        <div class="input-container">
-          <label for="">Nombre del titular</label>
-          <input nz-input type="text" name="cardName" [(value)]="cardName" autocomplete=off [(ngModel)]="cardName" placeholder="Nombre del titular"/>
-        </div>
-        <div class="‼️">
-          <div class="input-container">
-            <label for="">Fecha de expedición</label>
-            <input nz-input type="text" name="cardExpiry" maxlength="5" autocomplete=off min="0" pattern="^[0-9]+"[(value)]="cardExpiry" [(ngModel)]="cardExpiry" placeholder="00/00"/>
-          </div>
-          <div class="input-container">
-            <label for="">Código de seguridad</label>
-            <input nz-input type="text" name="cardCode" maxlength="3" autocomplete=off min="0" pattern="^[0-9]+"[(value)]="cardCode" [(ngModel)]="cardCode" placeholder="123"/>
-          </div>
-        </div>
-      </form>
-      <button
-        nz-button
-        [disabled]="!canPaymentSubmit()"
-        (click)="submitPayment()"
-      >
+    <!-- SECOND STEP -->
+    <div *ngIf="currentStep === 2">
+        <div class="payment-container">
+            <h2>Detalle de los pagos</h2>
+            <form>
+                <div class="input-container">
+                    <label for="">Numero de tarjeta</label>
+                    <input nz-input type="number" name="cardNumber" maxlength="16" autocomplete=off [(value)]="cardNumber" [(ngModel)]="cardNumber" placeholder="1234123412341234" />
+                </div>
+                <div class="input-container">
+                    <label for="">Nombre del titular</label>
+                    <input nz-input type="text" name="cardName" [(value)]="cardName" autocomplete=off [(ngModel)]="cardName" placeholder="Nombre del titular" />
+                </div>
+                <div class="‼️">
+                    <div class="input-container">
+                        <label for="">Fecha de expedición</label>
+                        <input nz-input type="number" name="cardExpiry" maxlength="5" autocomplete=off min="0" pattern="^[0-9]+" [(value)]="cardExpiry" [(ngModel)]="cardExpiry" placeholder="00/00" />
+                    </div>
+                    <div class="input-container">
+                        <label for="">Código de seguridad</label>
+                        <input nz-input type="number" name="cardCode" maxlength="3" autocomplete=off min="0" pattern="^[0-9]+" [(value)]="cardCode" [(ngModel)]="cardCode" placeholder="123" />
+                    </div>
+                </div>
+            </form>
+            <button nz-button [disabled]="!canPaymentSubmit()" (click)="submitPayment()">
         Continuar
       </button>
-    </div>
-  </div>
-  <!-- THIRD STEP -->
-  <div *ngIf="currentStep === 3">
-    <div class="summary-container">
-      <div class="summary-container__order">
-        <h2>Resumen del pedido</h2>
-        <div class="details">
-          <div><span>Cantitad</span> {{ cartData.products.length }}</div>
-          <div><span>Metodo de pago</span> Credito</div>
-          <div>
-            <span>Pedido total</span> {{ cartData.total | currency: "€" }}
-          </div>
         </div>
-        <button nz-button nzType="primary" (click)="submitCheckout()" [nzLoading]="loading">
+    </div>
+    <!-- THIRD STEP -->
+    <div *ngIf="currentStep === 3">
+        <div class="summary-container">
+            <div class="summary-container__order">
+                <h2>Resumen del pedido</h2>
+                <div class="details">
+                    <div><span>Cantitad</span> {{ cartData.products.length }}</div>
+                    <div><span>Metodo de pago</span> Credito</div>
+                    <div>
+                        <span>Pedido total</span> {{ cartData.total | currency: "€" }}
+                    </div>
+                </div>
+                <button nz-button nzType="primary" (click)="submitCheckout()" [nzLoading]="loading">
           Realizar pedido
         </button>
-      </div>
-      <div class="summary-container__items">
-        <h2>Articulos Encargados</h2>
-        <div class="item-list">
-          <div class="item-container" *ngFor="let item of cartData.products">
-            <div class="item-image">
-              <img [src]="item.image" alt="" />
             </div>
-            <div class="item-title">
-              {{ item.title }}
+            <div class="summary-container__items">
+                <h2>Articulos Encargados</h2>
+                <div class="item-list">
+                    <div class="item-container" *ngFor="let item of cartData.products">
+                        <div class="item-image">
+                            <img [src]="item.image" alt="" />
+                        </div>
+                        <div class="item-title">
+                            {{ item.title }}
+                        </div>
+                        <div class="item-total">
+                            {{ item.price | currency: "€" }} x {{ item.quantity }} = {{ item.quantity * item.price | currency: "€" }}
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="item-total">
-              {{ item.price | currency: "€" }} x {{ item.quantity }} =
-              {{ item.quantity * item.price | currency: "€" }}
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!-- LAST STEP - THANK YOU -->
-  <div *ngIf="currentStep === 4">
-    <div class="confirmation-container">
-      <header>
-        <div class="title">
-          <h1>Gracias por tu compra</h1>
-          <p>Comprueba tu compra con el email que te hemos enviado</p>
-        </div>
-        <div class="order-id">
-          Id de compra: <span>{{ orderId }}</span>
-        </div>
-      </header>
-      <button nz-button class="cta-button" routerLink="/">
+    <!-- LAST STEP - THANK YOU -->
+    <div *ngIf="currentStep === 4">
+        <div class="confirmation-container">
+            <header>
+                <div class="title">
+                    <h1>Gracias por tu compra</h1>
+                    <p>Comprueba tu compra con el email que te hemos enviado</p>
+                </div>
+                <div class="order-id">
+                    Id de compra: <span>{{ orderId }}</span>
+                </div>
+            </header>
+            <button nz-button class="cta-button" routerLink="/">
         Continua comprando
       </button>
-      <div class="products-container">
-        <h2>Resumen de compra</h2>
-        <div class="products-container__list">
-          <div class="list-item" *ngFor="let item of products">
-            <div class="item-image">
-              <img [src]="item.image" alt="" />
+            <div class="products-container">
+                <h2>Resumen de compra</h2>
+                <div class="products-container__list">
+                    <div class="list-item" *ngFor="let item of products">
+                        <div class="item-image">
+                            <img [src]="item.image" alt="" />
+                        </div>
+                        <div class="item-title">
+                            {{ item.title }}
+                        </div>
+                        <div class="item-total">
+                            {{ item.price | currency: "€" }} x {{ item.quantity }} = {{ item.quantity * item.price | currency: "€" }}
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="item-title">
-              {{ item.title }}
-            </div>
-            <div class="item-total">
-              {{ item.price | currency: "€" }} x {{ item.quantity }} =
-              {{ item.quantity * item.price | currency: "€" }}
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
